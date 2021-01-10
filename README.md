@@ -1,24 +1,5 @@
-# README
+# かりものリマインダー
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+「かりものリマインダー」は、借りた物・貸した物を忘れてしまう人のためのリマインドサービスです。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+借りている物・貸している物をリストで管理でき、リマインドメールを受け取れることが特徴です。
