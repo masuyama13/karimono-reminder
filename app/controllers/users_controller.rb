@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-
   def index
     @users = User.all
   end
@@ -10,9 +9,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-    def new
+  def new
     @user = User.new
-  end
+end
 
   def edit
     @user = User.find(params[:id])
@@ -40,7 +39,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-      redirect_to users_url, notice: "User was successfully destroyed."
+    redirect_to users_url, notice: "User was successfully destroyed."
   end
 
   private
