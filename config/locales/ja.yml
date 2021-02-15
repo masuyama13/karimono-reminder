@@ -7,6 +7,15 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      borrowing_thing: かりもの
+    attributes:
+      borrowing_thing:
+        id: ID
+        name: 名称
+        borrow_from: 相手
+        borrowed_on: 貸借日
+        remind_on: 通知日
   date:
     abbr_day_names:
     - 日
@@ -17,7 +26,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -43,7 +52,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
