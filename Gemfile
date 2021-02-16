@@ -37,6 +37,8 @@ group :development, :test do
   gem "rubocop-rails", require: false
   gem "rubocop-packaging", require: false
   gem "rubocop-performance", require: false
+  gem "rspec-rails", "~> 4.0.2"
+  gem "factory_bot_rails"
 end
 
 group :development do
