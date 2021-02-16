@@ -40,7 +40,9 @@ jobs:
         ruby-version: 2.7
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Setup DB
-      run: bundle exec rails db:schema:load
+      run: |
+        bundle exec rails db:create
+        bundle exec rails db:schema:load
       env:
         RAILS_ENV: test
     - name: Rubocop
