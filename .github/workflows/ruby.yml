@@ -39,8 +39,9 @@ jobs:
       with:
         ruby-version: 2.7
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Setup DB
+    - name: Set up DB
       run: |
+        cp config/database.yml.github-actions config/database.yml
         bundle exec rails db:create
         bundle exec rails db:schema:load
       env:
