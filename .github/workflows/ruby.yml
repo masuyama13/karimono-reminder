@@ -16,7 +16,7 @@ jobs:
     
     services:
       postgres:
-        image: postgres
+        image: postgres:12
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -28,6 +28,13 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
+    container:
+      image: ruby:2.7
+      env:
+        RAILS_ENV: test
+        RAILS_DATABASE_HOST: postgres
+        RAILS_DATABASE_USER: postgres
+        RAILS_DATABASE_PASSWORD: postgres
 
     steps:
     - uses: actions/checkout@v2
@@ -41,7 +48,6 @@ jobs:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Set up DB
       run: |
-        cp config/database.yml.github-actions config/database.yml
         bundle exec rails db:create
         bundle exec rails db:schema:load
       env:
