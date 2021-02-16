@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @borrowing_thing.name %>
+</p>
+
+<p>
+  <strong>Borrow from:</strong>
+  <%= @borrowing_thing.borrow_from %>
+</p>
+
+<p>
+  <strong>Borrowed on:</strong>
+  <%= @borrowing_thing.borrowed_on %>
+</p>
+
+<p>
+  <strong>Remind on:</strong>
+  <%= @borrowing_thing.remind_on %>
+</p>
+
+<%= link_to 'Edit', edit_borrowing_thing_path(@borrowing_thing) %> |
+<%= link_to 'Back', borrowing_things_path %>

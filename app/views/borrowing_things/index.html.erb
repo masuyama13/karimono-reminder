@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Borrowing Things</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Borrow from</th>
+      <th>Borrowed on</th>
+      <th>Remind on</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @borrowing_things.each do |borrowing_thing| %>
+      <tr>
+        <td><%= borrowing_thing.name %></td>
+        <td><%= borrowing_thing.borrow_from %></td>
+        <td><%= borrowing_thing.borrowed_on %></td>
+        <td><%= borrowing_thing.remind_on %></td>
+        <td><%= link_to 'Show', borrowing_thing %></td>
+        <td><%= link_to 'Edit', edit_borrowing_thing_path(borrowing_thing) %></td>
+        <td><%= link_to 'Destroy', borrowing_thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Borrowing Thing', new_borrowing_thing_path %>
