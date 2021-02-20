@@ -5,6 +5,8 @@ class BorrowingThing < ApplicationRecord
   validates :borrow_from, presence: true # TODO: lengthを設定する
   validate :remind_on_should_be_after_borrowed_on
 
+  belongs_to :user
+
   private
     def remind_on_should_be_after_borrowed_on
       return unless remind_on && borrowed_on

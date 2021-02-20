@@ -4,7 +4,7 @@ class BorrowingThingsController < ApplicationController
   before_action :set_borrowing_thing, only: [:show, :edit, :update, :destroy]
 
   def index
-    @borrowing_things = BorrowingThing.all
+    @borrowing_things = current_user.borrowing_things
   end
 
   def show
@@ -18,7 +18,7 @@ end
   end
 
   def create
-    @borrowing_thing = BorrowingThing.new(borrowing_thing_params)
+    @borrowing_thing = current_user.borrowing_things.new(borrowing_thing_params)
 
     if @borrowing_thing.save
       redirect_to @borrowing_thing, notice: "Borrowing thing was successfully created."
@@ -43,7 +43,7 @@ end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_borrowing_thing
-      @borrowing_thing = BorrowingThing.find(params[:id])
+      @borrowing_thing = current_user.borrowing_things.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
