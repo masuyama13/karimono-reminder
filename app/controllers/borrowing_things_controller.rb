@@ -4,7 +4,7 @@ class BorrowingThingsController < ApplicationController
   before_action :set_borrowing_thing, only: [:show, :edit, :update, :destroy]
 
   def index
-    @borrowing_things = current_user.borrowing_things
+    @borrowing_things = current_user.borrowing_things.order(created_at: :desc)
   end
 
   def show
