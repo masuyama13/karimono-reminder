@@ -61,7 +61,7 @@ RSpec.describe "かりもの管理機能", type: :system do
       end
       example "登録されているかりものを編集する" do
         visit borrowing_things_path
-        click_on "Edit"
+        click_on "編集"
         within "form[name=borrowing_thing]" do
           fill_in "名称", with: "借りている物"
         end
@@ -86,7 +86,7 @@ RSpec.describe "かりもの管理機能", type: :system do
       example "登録されているかりものを削除する", js: true do
         visit borrowing_things_path
         accept_confirm do
-          click_on "Destroy"
+          click_on "削除"
         end
         expect(page).to have_no_content "借りた物"
       end
