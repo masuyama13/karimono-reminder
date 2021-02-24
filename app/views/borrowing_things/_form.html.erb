@@ -1,4 +1,4 @@
-<%= form_with(model: borrowing_thing, local: true) do |form| %>
+<%= form_with(model: borrowing_thing, local: true, html: {name: "borrowing_thing"}) do |form| %>
   <% if borrowing_thing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(borrowing_thing.errors.count, "error") %> prohibited this borrowing_thing from being saved:</h2>
@@ -23,12 +23,12 @@
 
   <div class="field">
     <%= form.label :borrowed_on %>
-    <%= form.date_select :borrowed_on %>
+    <%= form.date_field :borrowed_on %>
   </div>
 
   <div class="field">
     <%= form.label :remind_on %>
-    <%= form.date_select :remind_on %>
+    <%= form.date_field :remind_on %>
   </div>
 
   <div class="actions">
