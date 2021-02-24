@@ -1,9 +1,7 @@
-<h1>ユーザー情報編集</h1>
+<h1>ユーザー情報変更</h1>
 
 <%= render 'form', user: @user %>
 
 <div>
   <%= link_to 'ユーザー削除', @user, method: :delete, data: { confirm: 'ユーザー情報をすべて削除します。よろしいですか？' } %>
 </div>
-<%= link_to 'Show', @user %> |
-<%= link_to 'Home', root_path %>

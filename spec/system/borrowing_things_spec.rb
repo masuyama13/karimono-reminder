@@ -24,7 +24,7 @@ RSpec.describe "かりもの管理機能", type: :system do
         login_user("bob@example.com")
       end
       example "Aliceが登録したかりものが表示されない" do
-        expect(page).to have_no_content "CD"
+        expect(page).to_not have_content "CD"
       end
     end
   end
@@ -67,7 +67,7 @@ RSpec.describe "かりもの管理機能", type: :system do
         end
         click_on "更新する"
         visit borrowing_things_path
-        expect(page).to have_no_content "借りた物"
+        expect(page).to_not have_content "借りた物"
         expect(page).to have_content "借りている物"
       end
     end
@@ -88,7 +88,7 @@ RSpec.describe "かりもの管理機能", type: :system do
         accept_confirm do
           click_on "削除"
         end
-        expect(page).to have_no_content "借りた物"
+        expect(page).to_not have_content "借りた物"
       end
     end
   end
