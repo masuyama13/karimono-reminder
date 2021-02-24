@@ -3,7 +3,7 @@
 <%= render 'form', user: @user %>
 
 <div>
-  <%= link_to 'ユーザー削除', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'ユーザー削除', @user, method: :delete, data: { confirm: 'ユーザー情報をすべて削除します。よろしいですか？' } %>
 </div>
 <%= link_to 'Show', @user %> |
 <%= link_to 'Home', root_path %>
