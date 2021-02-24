@@ -2,9 +2,14 @@
 
 class BorrowingThingsController < ApplicationController
   before_action :set_borrowing_thing, only: [:show, :edit, :update, :destroy]
+  skip_before_action :login_required, only: :index
 
   def index
-    @borrowing_things = current_user.borrowing_things.order(created_at: :desc)
+    if current_user
+      @borrowing_things = current_user.borrowing_things.order(created_at: :desc)
+    else
+      render "home/index"
+    end
   end
 
   def show
